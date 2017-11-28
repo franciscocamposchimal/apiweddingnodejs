@@ -49,7 +49,7 @@ function saveInvitado(req, res) {
 }
 
 function getInvitados(req, res) {
-    Invitado.find({}).populate({ path: 'user' }).exec((err, invitados) => {
+    Invitado.find({}).exec((err, invitados) => {
         if (err) {
             res.status(500).send({ message: 'Error en la peticion..' });
         } else {
