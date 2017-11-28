@@ -43,7 +43,7 @@ function saveInvitado(req, res) {
         });
     } else {
         res.status(200).send({
-            message: 'El nombre del animal es obligatorio...'
+            message: 'El nombre del invitado es obligatorio...'
         });
     }
 }
@@ -54,7 +54,7 @@ function getInvitados(req, res) {
             res.status(500).send({ message: 'Error en la peticion..' });
         } else {
             if (!invitados) {
-                res.status(404).send({ message: 'No hay animales..' });
+                res.status(404).send({ message: 'No hay invitadoss..' });
             } else {
                 res.status(200).send({ invitados });
             }
@@ -71,7 +71,7 @@ function getInvitado(req, res) {
             res.status(500).send({ message: 'Error en la peticion..' });
         } else {
             if (!invitado) {
-                res.status(404).send({ message: 'Animales no existe..' });
+                res.status(404).send({ message: 'Invitado no existe..' });
             } else {
                 res.status(200).send({ invitado });
             }
@@ -138,7 +138,7 @@ function uploadImage(req, res) {
 
 function getImageFile(req, res) {
     var imagefile = req.params.imageFile;
-    var path_file = './uploads/animals/' + imagefile;
+    var path_file = './uploads/invitados/' + imagefile;
 
     fs.exists(path_file, function (exists) {
         if (exists) {
