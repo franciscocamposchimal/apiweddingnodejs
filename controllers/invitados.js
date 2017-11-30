@@ -19,7 +19,7 @@ function saveInvitado(req, res) {
     var invitado = new Invitado();
 
     var params = req.body;
-
+    console.log(params.tel.lenght);
     if (params.nombre) {
         invitado.asistencia = '0',
         invitado.invitados = '1',
@@ -29,7 +29,6 @@ function saveInvitado(req, res) {
         invitado.tel = params.tel,
         invitado.link =  null,
         invitado.user = req.user.sub;
-
         invitado.save((err, invitadoStored) => {
             if (err) {
                 res.status(500).send({ message: 'Error en el servidor...' });
